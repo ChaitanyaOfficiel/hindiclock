@@ -1,0 +1,82 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+    font-family: 'Monospace';
+}
+body{
+    background: linear-gradient(rgb(218,106,14), rgb(122,41,3));
+    min-height: 100vh;
+    justify-content: center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+/* making of the clock */
+.hindiclock{
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    border: 4px solid black;
+}
+/* clock letters and  making  it center */
+.hindiclock .num{
+    --rotation:0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+}
+.hindiclock .num1{--rotation: 30deg;}
+.hindiclock .num2{--rotation: 60deg;}
+.hindiclock .num3{--rotation: 90deg;}
+.hindiclock .num4{--rotation: 120deg;}
+.hindiclock .num5{--rotation: 150deg;}
+.hindiclock .num6{--rotation: 180deg;}
+.hindiclock .num7{--rotation: 210deg;}
+.hindiclock .num8{--rotation: 240deg;}
+.hindiclock .num9{--rotation: 270deg;}
+.hindiclock .num10{--rotation: 300deg;}
+.hindiclock .num11{--rotation: 330deg;}
+/* after effects of the hindi clock */
+.hindiclock::after{
+    content: '';
+    position: absolute;
+    bottom: 50%;
+    z-index: 11;
+    left: 50%;
+    width: 15px;
+    width: 15px;
+    height: 50%;
+    transform: translate(-50%,-50%);
+}
+/* arm of the clock */
+.hindiclock .arm {
+    --rotation:0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 10px;
+    height: 50%;
+    background-color: black;
+    transform: translate(-50%)  rotate(calc(var(--rotation) * 1deg));
+    transform-origin: bottom;
+}
+
+.hindiclock .hour-arm{
+    width: 10px;
+    height: 40%;
+    background-color: black;
+}
+.hindiclock .minute-arm{
+    width: 7px;
+    height: 45%;
+    background-color: black;
+}
+.hindiclock .second-arm{
+    width: 3px;
+    height: 50%;
+    background-color: red;
+}
+
